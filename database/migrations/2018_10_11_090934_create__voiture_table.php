@@ -16,10 +16,6 @@ class CreateVoitureTable extends Migration
         Schema::create('Voitures', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('nbKm');
-            $table->DATE('date_debut');
-            $table->DATE('date_fin')->nullable();
-            $table->integer('nbKmPret');
         });
     }
 
