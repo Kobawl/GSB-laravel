@@ -37,5 +37,8 @@ class Visiteur extends Model
     {
         return $this->FicheFrais()->where('mois', '=', $month)->first();
     }
+    public function Voitures(){
+        return $this->belongsToMany(Voiture::class);
+    }
 
 }

@@ -13,7 +13,7 @@ class CreateVisiteurVoitureTable extends Migration
      */
     public function up()
     {
-        Schema::create('Visiteur_Voiture', function (Blueprint $table) {
+        Schema::create('visiteur_voiture', function (Blueprint $table) {
             $table->increments('id');
             $table->string('visiteur_id', 4);
             $table->integer('voiture_id')->unsigned();
@@ -32,6 +32,6 @@ class CreateVisiteurVoitureTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Visiteur_Voiture');
+        Schema::dropIfExists('visiteur_voiture');
     }
 }
