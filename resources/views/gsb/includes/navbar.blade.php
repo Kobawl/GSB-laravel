@@ -45,6 +45,14 @@
                         Frais Hors Forfait
                     </a>
                 </li>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    GESTION DES VEHICULES
+                </h6>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route("gsb.voitures.index") }}">
+                        Consulter l'emprun des véhicules
+                    </a>
+                </li>
             </ul>
         @endif
     </div>
