@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FicheFrais;
+use App\Models\FraisHorsForfait;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 
@@ -50,9 +51,10 @@ class FichesController extends Controller
             // Refreshes the Page
             return redirect(route("gsb.fiches.index"));
         }
+        $lesMoisHorsForfait = \App\Models\FraisHorsForfait::select('date')->groupBy(\DB::raw('MONTH(date)'))->havingRaw('COUNT(*) > 2')->get();
 
         // Returns the View, with the FicheFrais
-        return view("gsb.fiches.index", compact("FicheFrais"));
+        return view("gsb.fiches.index", compact("FicheFrais","lesMoisHorsForfait"));
     }
 
 }
