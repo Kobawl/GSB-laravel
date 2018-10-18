@@ -29,14 +29,13 @@
     <table class="table">
         <thead class="thead-light">
         <tr>
-            <th></th>
             <th>Mois</th>
+            <th></th>
         </tr> 
         </thead>
         <tbody>
             @foreach($lesMoisHorsForfait as $mois)
             <tr>
-                <th class="row"></th>
                 <td>{{ \Carbon\Carbon::parse($mois->date)->format('F o')}}</td>
             </tr>
             @endforeach
