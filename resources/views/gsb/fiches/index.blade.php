@@ -19,6 +19,29 @@
             <td>{{ \Carbon\Carbon::parse($fiche->dateModif)->diffForHumans() }}</td>
         </tr>
         @endforeach
+        
+    </table>
+    <hr>
+    
+    <h4>Mois avec plus de 2 hors forfait</h4>
+    <hr>
+
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th></th>
+            <th>Mois</th>
+        </tr> 
+        </thead>
+        <tbody>
+            @foreach($lesMoisHorsForfait as $mois)
+            <tr>
+                <th class="row"></th>
+                <td>{{ \Carbon\Carbon::parse($mois->date)->format('F o')}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+        
     </table>
 
 @endsection
